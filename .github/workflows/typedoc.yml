@@ -35,12 +35,11 @@ jobs:
       - uses: actions/setup-node@v2
         with:
             node-version: 20
-      - run: npx typedoc
-      - run: python -m mkdocs build --verbose --clean
+      - run: npx typedoc --out site src/ScriptEditor/NetscriptDefinitions.d.ts
       - uses: actions/upload-pages-artifact@v1
         with:
           name: typedoc
-          path: typedocs
+          path: site
       - uses: actions/deploy-pages@v2
         id: deployment
         with:
