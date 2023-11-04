@@ -1,8 +1,7 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
-on:
-  # Runs on pushes targeting the default branch
+on: # Runs on pushes targeting the default branch
   push:
     branches:
       - dev
@@ -30,8 +29,7 @@ jobs:
   steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name:
-        - name: Deploy docs
-          uses: mhausenblas/mkdocs-deploy-gh-pages@master
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy docs
+      uses: mhausenblas/mkdocs-deploy-gh-pages@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
