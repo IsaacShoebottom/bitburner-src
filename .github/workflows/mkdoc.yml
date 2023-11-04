@@ -36,5 +36,9 @@ jobs:
           cache: 'pip'
 
       - run: pip install mkdocs
-      - run: git config user.name "${GITHUB_ACTOR}" && git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - name: give github token to mkdocs
+        run: |
+          echo "github_token: ${{ secrets.GITHUB_TOKEN }}" >> mkdocs.yml
+
       - run: python -m mkdocs gh-deploy --force
