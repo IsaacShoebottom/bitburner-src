@@ -32,16 +32,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-node@v2
         with:
-          python-version: 3.8
-      - run: pip install mkdocs
+            node-version: 20
+      - run: npx typedoc
       - run: python -m mkdocs build --verbose --clean
-
       - uses: actions/upload-pages-artifact@v1
         with:
           name: typedoc
-          path: site
+          path: typedocs
       - uses: actions/deploy-pages@v2
         id: deployment
         with:
