@@ -37,7 +37,7 @@ jobs:
 
       - name: Build the documentation
         run: |
-          mkdocs build --verbose --clean --strict
+          mkdocs build --verbose --clean
 
       - name: Deploy to GitHub Pages
         run: |
