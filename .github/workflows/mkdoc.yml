@@ -44,4 +44,4 @@ jobs:
           path: site
       - uses: actions/deploy-pages@v2
         with:
-          artifact-name: mkdocs
+          artifact_name: mkdocs
