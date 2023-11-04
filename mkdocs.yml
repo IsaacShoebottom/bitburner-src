@@ -1,0 +1,3 @@
+site_name: Bitburner Documenation
+docs_dir: src/Documentation/doc
+theme: readthedocs
