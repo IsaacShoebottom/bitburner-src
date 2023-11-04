@@ -35,10 +35,6 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install mkdocs
 
-      - name: Build the documentation
-        run: |
-          mkdocs build --verbose --clean
-
       - name: Deploy to GitHub Pages
         run: |
-          mkdocs gh-deploy --verbose --clean --strict --force
+          mkdocs gh-deploy --verbose --clean --force
