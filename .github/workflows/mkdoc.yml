@@ -38,7 +38,7 @@ jobs:
       - run: pip install mkdocs
       - run: python -m mkdocs build --verbose --clean
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-pages-artifact@v1
         with:
           name: mkdocs
           path: site
