@@ -30,9 +30,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Write mkdocs to requirements.txt for caching
+        run: |
+          echo "mkdocs==1.5.3" >> requirements.txt
+
       - uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.11
           cache: 'pip'
-      - run: pip install mkdocs
+      - run: pip install -r requirements.txt
+      - run: |
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - run: python -m mkdocs gh-deploy --force
