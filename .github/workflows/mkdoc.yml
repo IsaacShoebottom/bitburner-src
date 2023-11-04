@@ -29,7 +29,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install mkdocs
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install mkdocs
+
+      - name: Build the documentation
+        run: |
+          mkdocs build --verbose --clean --strict
+
+      - name: Deploy to GitHub Pages
+        run: |
+          mkdocs gh-deploy --verbose --clean --strict --force

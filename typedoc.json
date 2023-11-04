@@ -1,0 +1,6 @@
+{
+  "entryPoints": [
+    "src/ScriptEditor/NetscriptDefinitions.d.ts"
+  ],
+  "out": "typedocs"
+}
