@@ -36,7 +36,6 @@ jobs:
         with:
             node-version: 20
       - run: npm ci
-      - run: pwd
       - run: npx typedoc --out site src/ScriptEditor/NetscriptDefinitions.d.ts
       - uses: actions/upload-pages-artifact@v1
         with:
